@@ -1,0 +1,68 @@
+//Variables
+$bg: linear-gradient(90deg, #3B3C41 0%, #0D0D0F 92.83%);
+$white: #FFF;
+$gray: #DBCCCC;
+$blue: #5D85F4;
+$box-button: 0px 0px 36px 6px rgba(93, 133, 244, 0.4);
+
+@font-face {
+    font-family: 'SF Pro';
+    src: url(./SFPRODISPLAYMEDIUM.OTF);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro';
+}
+
+body {
+    background: $bg;
+}
+
+.container {
+    max-width: 1030px;
+    margin: auto;
+    margin-top: 100px;
+    color: $white;
+    h1 {
+        font-size: 48px;
+        width: 430px;
+    }
+    h2 {
+        margin: 40px 0px;
+        font-size: 16px;
+        opacity: 0.3;
+    }
+    .input {
+        display: flex;
+       input {
+        width: 400px;
+        height: 80px;
+        background: $gray;
+        opacity: 0.4;
+        outline: none;
+        padding: 24px 89px 24px 24px;
+        font-size: 24px;
+        backdrop-filter: blur(5px);
+        border-radius: 24px;
+    }
+    
+    button {
+        width: 65px;
+        height: 80px;
+        background: $blue;
+        box-shadow: $box-button;
+        border-radius: 24px;
+        cursor: pointer;
+    } 
+    .button {
+        z-index: 1;
+        margin-left: -65px;
+    }
+    
+    }
+    
+}
