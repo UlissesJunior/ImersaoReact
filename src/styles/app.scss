@@ -4,6 +4,7 @@ $white: #FFF;
 $gray: #DBCCCC;
 $blue: #5D85F4;
 $box-button: 0px 0px 36px 6px rgba(93, 133, 244, 0.4);
+$box-banner: 0px 0px 36px 12px rgba(93, 133, 244, 0.25);
 
 @font-face {
     font-family: 'SF Pro';
@@ -25,8 +26,9 @@ body {
 .container {
     max-width: 1030px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 16vh;
     color: $white;
+    display: flex;
     h1 {
         font-size: 48px;
         width: 430px;
@@ -35,10 +37,12 @@ body {
         margin: 40px 0px;
         font-size: 16px;
         opacity: 0.3;
+        width: 400px;
     }
     .input {
         display: flex;
-       input {
+
+    input {
         width: 400px;
         height: 80px;
         background: $gray;
@@ -54,15 +58,61 @@ body {
         width: 65px;
         height: 80px;
         background: $blue;
-        box-shadow: $box-button;
+        outline: none;
         border-radius: 24px;
         cursor: pointer;
     } 
+    button:hover {
+        box-shadow: $box-button;
+        transition: ease 0.4s;
+    }
+
     .button {
         z-index: 1;
         margin-left: -65px;
     }
-    
+}
+
+    .profile {
+        h1 {
+            margin: 40px 0 24px 0;
+            font-size: 32px;
+        }
+        h2::first-child {
+            margin-top: 24px;
+        }
+        h2 {
+            margin: 0;
+            font-size: 18px;
+            margin-top: 16px;
+        }
+        h3 {
+            font-size: 24px;
+        }
+        .img-profile {
+            position: relative;
+            img {
+                border-radius: 100%;
+                width: 186px;
+                height: 186px;
+            }
+            
+        }
+        .img-content {
+            position: absolute;
+            display: grid;
+            margin: -167px 0 0 230px;
+        }
+}
+
+    .banner {
+        margin-left: 130px;
+        img {
+            box-shadow: $box-banner;
+            border-radius: 48px;
+        }
     }
     
+
 }
+
