@@ -16,7 +16,7 @@ function Profile() {
           <h1>Your Profile</h1>
           
           <div className='img-profile'>
-            <img src={Github.avatar_url} />
+            <img src={Github.avatar_url} alt='avatar' />
           </div>
           <div className='img-content'>
               <h3>{Github.login}</h3>

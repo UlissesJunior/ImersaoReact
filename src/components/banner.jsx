@@ -4,7 +4,7 @@ import BannerImg from '../img/banner.png'
 function Banner() {
     return(
         <div className='banner'>
-            <img src={BannerImg} />
+            <img src={BannerImg} alt='banner'/>
         </div>
     )
 }

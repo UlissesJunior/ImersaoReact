@@ -15,7 +15,7 @@ function input() {
         />
               <div className='button'>
                 <span>
-                  <button className="button-click"><img src={SearchImg} /></button>
+                  <button className="button-click"><img src={SearchImg} alt="lupa"/></button>
                 </span>
               </div>
           </div>
