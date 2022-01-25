@@ -10,8 +10,6 @@ function input() {
           <h2>The best chat, created with the help of Immersion React (Alura).</h2>
           <div className='input'>
             <input 
-            // onChange={handleInputChange} 
-            // value={inputData} 
             className="add-note-input" 
             type="text" 
         />
