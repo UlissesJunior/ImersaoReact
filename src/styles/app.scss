@@ -1,195 +1,189 @@
 //Variables
-$bg: linear-gradient(90deg, #3B3C41 0%, #0D0D0F 92.83%);
-$white: #FFF;
-$gray: #DBCCCC;
-$blue: #5D85F4;
+$bg: linear-gradient(90deg, #3b3c41 0%, #0d0d0f 92.83%);
+$white: #fff;
+$gray: #dbcccc;
+$blue: #5d85f4;
 $box-button: 0px 0px 36px 6px rgba(93, 133, 244, 0.4);
 $box-banner: 0px 0px 36px 12px rgba(93, 133, 244, 0.25);
 
 @font-face {
-    font-family: 'SF Pro';
-    src: url(./SFPRODISPLAYMEDIUM.OTF);
+  font-family: "SF Pro";
+  src: url(./SFPRODISPLAYMEDIUM.OTF);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-    font-family: 'SF Pro';
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "SF Pro";
 }
 
 body {
-    background: $bg;
+  background: $bg;
 }
 
 .container {
-    max-width: 1030px;
-    margin: auto;
-    margin-top: 16vh;
-    color: $white;
+  max-width: 1030px;
+  margin: auto;
+  margin-top: 16vh;
+  color: $white;
+  display: flex;
+  h1 {
+    font-size: 48px;
+    width: 430px;
+  }
+  h2 {
+    margin: 40px 0px;
+    font-size: 16px;
+    opacity: 0.3;
+    width: 400px;
+  }
+  .input {
     display: flex;
-    h1 {
-        font-size: 48px;
-        width: 430px;
-    }
-    h2 {
-        margin: 40px 0px;
-        font-size: 16px;
-        opacity: 0.3;
-        width: 400px;
-    }
-    .input {
-        display: flex;
 
     input {
-        width: 400px;
-        height: 80px;
-        background: $gray;
-        opacity: 0.4;
-        outline: none;
-        padding: 24px 89px 24px 24px;
-        font-size: 24px;
-        backdrop-filter: blur(5px);
-        border-radius: 24px;
+      width: 400px;
+      height: 80px;
+      background: $gray;
+      opacity: 0.4;
+      outline: none;
+      padding: 24px 89px 24px 24px;
+      font-size: 24px;
+      backdrop-filter: blur(5px);
+      border-radius: 24px;
     }
-    
+
     button {
-        width: 65px;
-        height: 80px;
-        background: $blue;
-        outline: none;
-        border-radius: 24px;
-        cursor: pointer;
-    } 
+      width: 65px;
+      height: 80px;
+      background: $blue;
+      outline: none;
+      border-radius: 24px;
+      cursor: pointer;
+    }
 
     button:hover {
-        box-shadow: $box-button;
-        transition: ease 0.4s;
+      box-shadow: $box-button;
+      transition: ease 0.4s;
     }
 
     .button {
-        z-index: 1;
-        margin-left: -65px;
-        img {
-            width: 26.4px;
-            height: 25.35px;
-        }
+      z-index: 1;
+      margin-left: -65px;
+      img {
+        width: 26.4px;
+        height: 25.35px;
+      }
     }
+  }
+
+  .profile {
+    h1 {
+      margin: 40px 0 24px 0;
+      font-size: 32px;
+    }
+    h2::first-child {
+      margin-top: 24px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      margin-top: 16px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    .img-profile {
+      position: relative;
+      img {
+        border-radius: 100%;
+        width: 186px;
+        height: 186px;
+      }
+    }
+    .img-content {
+      position: absolute;
+      display: grid;
+      margin: -167px 0 0 230px;
+    }
+  }
+
+  .banner {
+    margin-left: 130px;
+    img {
+      width: 470px;
+      height: 600px;
+      box-shadow: $box-banner;
+      border-radius: 48px;
+    }
+  }
 }
 
-    .profile {
-        h1 {
-            margin: 40px 0 24px 0;
-            font-size: 32px;
-        }
-        h2::first-child {
-            margin-top: 24px;
-        }
-        h2 {
-            margin: 0;
-            font-size: 18px;
-            margin-top: 16px;
-        }
-        h3 {
-            font-size: 24px;
-        }
-        .img-profile {
-            position: relative;
-            img {
-                border-radius: 100%;
-                width: 186px;
-                height: 186px;
-            }
-            
-        }
-        .img-content {
-            position: absolute;
-            display: grid;
-            margin: -167px 0 0 230px;
-        }
-}
+@media (max-width: 1029px) {
+  .container {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+      font-size: 32px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 16px;
+      opacity: 0.3;
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+    }
 
     .banner {
-        margin-left: 130px;
+      display: none;
+    }
+
+    .input {
+      justify-content: center;
+      text-align: center;
+      input {
+        width: 92%;
+        height: 80px;
+      }
+
+      button {
+        width: 65px;
+        height: 80px;
+      }
+    }
+    .profile {
+      h1 {
+        font-size: 24px;
+      }
+      h2 {
+        font-size: 16px;
+        width: 120px;
+        text-align: left;
+        margin-left: 20px;
+      }
+      h3 {
+        font-size: 18px;
+        margin-left: 20px;
+      }
+      .img-profile {
         img {
-            width: 470px;
-            height: 600px;
-            box-shadow: $box-banner;
-            border-radius: 48px;
+          margin-left: 20px;
+          border-radius: 100%;
+          width: 186px;
+          height: 186px;
         }
+      }
+      .img-content {
+        position: absolute;
+        display: grid;
+        width: 120px;
+      }
     }
-    
-}
-
-@media (max-width:1029px) {
-    .container {
-        max-width: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        h1 {
-            font-size: 32px;
-            width: 100%;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 16px;
-            opacity: 0.3;
-            max-width: 100%;
-            width: 100%;
-            text-align: center;
-        }
-
-        .banner {
-            display: none;
-        }
-
-        .input {
-        justify-content: center;
-        text-align: center;
-        input {
-            width: 92%;
-            height: 80px;
-        }
-        
-        button {
-            width: 65px;
-            height: 80px;
-        } 
-
-    }
-        .profile {
-            
-        h1 {
-            font-size: 24px;
-        }
-        h2 {
-            font-size: 16px;
-            width: 120px;
-            text-align: left;
-            margin-left: 20px;
-        }
-        h3 {
-            font-size: 18px;
-            margin-left: 20px;
-        }
-        .img-profile {
-            img {
-                margin-left: 20px;
-                border-radius: 100%;
-                width: 186px;
-                height: 186px;
-            }
-            
-        }
-        .img-content {
-            position: absolute;
-            display: grid;
-            width: 120px;
-        }
-    }
-    
-}
+  }
 }

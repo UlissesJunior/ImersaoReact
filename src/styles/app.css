@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'SF Pro';
+  font-family: "SF Pro";
   src: url(./SFPRODISPLAYMEDIUM.OTF);
 }
 
@@ -9,19 +9,19 @@
   border: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'SF Pro';
+  font-family: "SF Pro";
 }
 
 body {
-  background: -webkit-gradient(linear, left top, right top, from(#3B3C41), color-stop(92.83%, #0D0D0F));
-  background: linear-gradient(90deg, #3B3C41 0%, #0D0D0F 92.83%);
+  background: -webkit-gradient(linear, left top, right top, from(#3b3c41), color-stop(92.83%, #0d0d0f));
+  background: linear-gradient(90deg, #3b3c41 0%, #0d0d0f 92.83%);
 }
 
 .container {
   max-width: 1030px;
   margin: auto;
   margin-top: 16vh;
-  color: #FFF;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,7 +48,7 @@ body {
 .container .input input {
   width: 400px;
   height: 80px;
-  background: #DBCCCC;
+  background: #dbcccc;
   opacity: 0.4;
   outline: none;
   padding: 24px 89px 24px 24px;
@@ -61,7 +61,7 @@ body {
 .container .input button {
   width: 65px;
   height: 80px;
-  background: #5D85F4;
+  background: #5d85f4;
   outline: none;
   border-radius: 24px;
   cursor: pointer;
