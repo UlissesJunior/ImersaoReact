@@ -189,6 +189,7 @@ body {
     margin-left: 80px;
   }
   .container .profile .img-profile img {
+    background: #5d85f4;
     margin-left: 20px;
     border-radius: 100%;
     width: 186px;

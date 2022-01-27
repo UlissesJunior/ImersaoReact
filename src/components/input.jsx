@@ -3,7 +3,7 @@ import React from "react";
 import SearchImg from '../img/lupa.png'
 
 
-const input = ({ Github, user, handleinput}) => {
+const input = ({ Github, user, handleinput, ChangePage}) => {
 
     return(
         <div>
@@ -17,7 +17,7 @@ const input = ({ Github, user, handleinput}) => {
         />
               <div className='button'>
                 <span>
-                  <button><img src={SearchImg} alt="lupa"/></button>
+                  <button onClick={ChangePage} ><img src={SearchImg} alt="lupa"/></button>
                 </span>
               </div>
           </div>
