@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import Input from './components/input';
 import Profile from './components/profile';
 import Banner from './components/banner';
-import SearchImg from './img/lupa.png'
 
 import './styles/app.css'
 
@@ -15,13 +14,8 @@ const Homepage = () => {
     const InputValue = event.target.value;
     SetUser(InputValue);
     console.log(InputValue);
-    // const NewGithub = fetch(`https://api.github.com/users/${user}`);
-    // setGithub(NewGithub);
   }
 
-  
-//alterar isso aqui
-//consumir a api dentro do use state do user
   const[ Github, setGithub ] = useState([])
   
   useEffect(() => {
@@ -29,7 +23,7 @@ const Homepage = () => {
     .then(response => response.json())
     .then(data => setGithub(data))
     console.log(Github)
-  }, [])
+  }, [user])
 
   return (
     <>
