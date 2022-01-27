@@ -182,11 +182,11 @@ body {
     font-size: 16px;
     width: 120px;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 80px;
   }
   .container .profile h3 {
     font-size: 18px;
-    margin-left: 20px;
+    margin-left: 80px;
   }
   .container .profile .img-profile img {
     margin-left: 20px;
@@ -199,6 +199,12 @@ body {
     display: -ms-grid;
     display: grid;
     width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container .profile h2, .container .profile h3 {
+    margin-left: 20px;
   }
 }
 /*# sourceMappingURL=app.css.map */

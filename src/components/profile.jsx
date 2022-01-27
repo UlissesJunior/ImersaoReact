@@ -1,16 +1,6 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
 
-function Profile() {
-
-    const[ Github, setGithub ] = useState([])
-
-    useEffect(() => {
-      fetch('https://api.github.com/users/UlissesJunior')
-      .then(response => response.json())
-      .then(data => setGithub(data))
-    }, [])
-
+const Profile = ({ Github }) => {
     return(
         <div className='profile'>
           <h1>Your Profile</h1>

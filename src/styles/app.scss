@@ -165,11 +165,11 @@ body {
         font-size: 16px;
         width: 120px;
         text-align: left;
-        margin-left: 20px;
+        margin-left: 80px;
       }
       h3 {
         font-size: 18px;
-        margin-left: 20px;
+        margin-left: 80px;
       }
       .img-profile {
         img {
@@ -186,4 +186,14 @@ body {
       }
     }
   }
+}
+
+@media (max-width: 480px) {
+    .container {
+        .profile {
+            h2, h3 {
+                margin-left: 20px;
+            }
+        }
+    }
 }
