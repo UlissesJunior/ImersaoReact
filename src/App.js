@@ -22,8 +22,7 @@ const Homepage = () => {
     fetch(`https://api.github.com/users/${user}`)
     .then(response => response.json())
     .then(data => setGithub(data))
-    console.log(Github)
-  }, [user])
+  }, [user]);
 
   return (
     <>
