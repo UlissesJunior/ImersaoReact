@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
 
 import Input from "./components/input";
 import Profile from "./components/profile";
@@ -10,6 +10,7 @@ import "./styles/app.css";
 
 const Homepage = () => {
   const [user, SetUser] = useState("UlissesJunior");
+  const history = useHistory();
 
   function handleinput(event) {
     console.log(event.target.value);
@@ -26,10 +27,8 @@ const Homepage = () => {
       .then((data) => setGithub(data));
   }, [user]);
 
-  function ChangePage(eventinfo) {
-    eventinfo.preventDefault();
-    console.log("aa");
-    window.location.href = "/chat";
+  const handleClick = () => {
+        window.location.href='/chat';
   }
 
   return (
@@ -42,7 +41,7 @@ const Homepage = () => {
                   Github={Github}
                   user={user}
                   handleinput={handleinput}
-                  ChangePage={ChangePage}
+                  handleClick={handleClick}
                 />
                 <Profile Github={Github} />
               </div>
@@ -50,10 +49,7 @@ const Homepage = () => {
             </div>
           )}
         />
-        <Route path="/Chat/" exact render={() => (
-        <Chat/>
-        )} 
-      />
+        <Route path="/chat" exact component={Chat}/>
       </Switch>
     </Router>
   );

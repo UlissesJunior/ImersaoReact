@@ -105,6 +105,8 @@ body {
 
 .container .profile .img-profile {
   position: relative;
+  width: 186px;
+  height: 186px;
 }
 
 .container .profile .img-profile img {
@@ -130,6 +132,42 @@ body {
   -webkit-box-shadow: 0px 0px 36px 12px rgba(93, 133, 244, 0.25);
           box-shadow: 0px 0px 36px 12px rgba(93, 133, 244, 0.25);
   border-radius: 48px;
+}
+
+.container-chat {
+  max-width: 1030px;
+  margin: auto;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-chat .nav {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+  height: 50px;
+  width: 100%;
+}
+
+.container-chat .nav a {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.container-chat .nav a:last-child {
+  opacity: 0.3;
+  text-decoration: none;
+  color: #fff;
 }
 
 @media (max-width: 1029px) {
@@ -189,7 +227,6 @@ body {
     margin-left: 80px;
   }
   .container .profile .img-profile img {
-    background: #5d85f4;
     margin-left: 20px;
     border-radius: 100%;
     width: 186px;

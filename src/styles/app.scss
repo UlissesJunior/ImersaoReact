@@ -96,6 +96,8 @@ body {
     }
     .img-profile {
       position: relative;
+      width: 186px;
+      height: 186px;
       img {
         border-radius: 100%;
         width: 186px;
@@ -116,6 +118,31 @@ body {
       height: 600px;
       box-shadow: $box-banner;
       border-radius: 48px;
+    }
+  }
+}
+
+.container-chat {
+  max-width: 1030px;
+  margin: auto;
+  color: $white;
+  display: flex;
+  .nav {
+    position: relative;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    height: 50px;
+    width: 100%;
+    a {
+    font-size: 32px;
+    font-weight: bold;
+    }
+    a:last-child {
+      opacity: 0.3;
+      text-decoration: none;
+      color: #fff;
     }
   }
 }
@@ -173,7 +200,6 @@ body {
       }
       .img-profile {
         img {
-          background: #5d85f4;
           margin-left: 20px;
           border-radius: 100%;
           width: 186px;
