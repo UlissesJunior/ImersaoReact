@@ -1,7 +1,5 @@
 import React from 'react';
 
-import ImgError from '../img/imgerror.png';
-
 const Profile = ({ Github }) => {
     return(
         <div className='profile'>
