@@ -6,9 +6,9 @@ export default function PageChat() {
     <>
       <div className="container-chat">
         <div className="nav">
-          <a>Chat React</a>
+          <h1>Chat React</h1>
           <img src={ReactLogo} alt="React Logo" />
-          <a>Logout</a>
+          <h2>Logout</h2>
         </div>
       </div>
     </>
