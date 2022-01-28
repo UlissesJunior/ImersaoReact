@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Input from "./components/input";
 import Profile from "./components/profile";
@@ -10,7 +10,7 @@ import "./styles/app.css";
 
 const Homepage = () => {
   const [user, SetUser] = useState("UlissesJunior");
-  const history = useHistory();
+  // const history = useHistory();
 
   function handleinput(event) {
     console.log(event.target.value);
