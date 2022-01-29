@@ -28,9 +28,11 @@ const Homepage = () => {
       .then((data) => setGithub(data));
   }, [user]);
 
-  const handleClick = (e) => {
-    e.preventDefault();
+  const handleClick = () => {
+    // e.preventDefault();
     history.push("/chat/");
+    history.push("/chat/");
+    history.goBack();
   }
 
   return (
