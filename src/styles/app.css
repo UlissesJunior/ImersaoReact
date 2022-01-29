@@ -159,15 +159,16 @@ body {
   width: 100%;
 }
 
-.container-chat .nav h1, .container-chat .nav a, .container-chat .nav h2 {
+.container-chat .nav h1, .container-chat .nav h2 {
   font-size: 32px;
   font-weight: bold;
 }
 
-.container-chat .nav a:last-child, .container-chat .nav h2 {
+.container-chat .nav h2 {
   opacity: 0.3;
   text-decoration: none;
   color: #fff;
+  cursor: pointer;
 }
 
 @media (max-width: 1029px) {
