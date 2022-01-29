@@ -1,5 +1,5 @@
 import React from "react";
-import ReactLogo from "../img/react_logo.png";
+import ReactLogo from "./img/react_logo.png";
 import { useHistory } from 'react-router-dom';
 
 export default function PageChat() {

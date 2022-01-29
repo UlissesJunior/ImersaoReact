@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import Input from "./components/input";
 import Profile from "./components/profile";
 import Banner from "./components/banner";
-import Chat from "./components/chat";
+import Chat from "./chat";
 
 import "./styles/app.css";
 
