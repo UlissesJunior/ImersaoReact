@@ -14,10 +14,8 @@ const Homepage = () => {
   const history = useHistory();
 
   function handleinput(event) {
-    console.log(event.target.value);
     const InputValue = event.target.value;
     SetUser(InputValue);
-    console.log(InputValue);
   }
 
   const [Github, setGithub] = useState([]);

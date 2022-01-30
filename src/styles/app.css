@@ -233,7 +233,6 @@ body {
 }
 
 .chat-card .card-note {
-  word-break: break-all;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,11 +242,15 @@ body {
   color: #fff;
 }
 
-.chat-card-2 {
-  background-color: #3f5aba;
+.chat-card:hover {
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+  background-color: #fff;
 }
 
-.chat-card-2 .card-note {
+.chat-card:hover .card-note {
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
   color: #5d85f4;
 }
 

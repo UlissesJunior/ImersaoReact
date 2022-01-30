@@ -201,7 +201,7 @@ body {
     margin: 20px;
   }
   .card-note {
-    word-break: break-all;
+    // word-break: break-all;
     display: flex;
     font-size: 24px;
     height: 100%;
@@ -210,9 +210,11 @@ body {
   }
 }
 
-.chat-card-2 {
-  background-color: $blue-card;
+.chat-card:hover {
+  transition: ease-in 0.3s;
+  background-color: #fff;
   .card-note {
+    transition: ease-in 0.3s;
     color: $blue;
   }
 }

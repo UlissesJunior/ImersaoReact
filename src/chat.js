@@ -1,12 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-
-// import Message from './components/message'
+import { createClient } from "@supabase/supabase-js";
 
 import ReactLogo from "./img/react_logo.png";
-
-// import Message from './components/message'
 
 export default function PageChat({ Github }) {
   const history = useHistory();
@@ -15,8 +12,23 @@ export default function PageChat({ Github }) {
     history.goBack();
   };
 
+  const SUPABASE_KEY =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzU3NTU0NywiZXhwIjoxOTU5MTUxNTQ3fQ.jawAD_4vKGPTeHjokNMLgo6QfZuB20NXJyq4bgubZTc";
+  const SUPABASE_URL = "https://lkayymgxskqfhgadypqm.supabase.co";
+  const supabaseclient = createClient(SUPABASE_URL, SUPABASE_KEY);
+
   const [message, setMessage] = useState("");
   const [messagelist, setMessagelist] = useState([]);
+
+  useEffect(() => {
+    supabaseclient
+      .from("messages")
+      .select("*")
+      .then(({ data }) => {
+        console.log("Dados da consulta:", data);
+        setMessagelist(data);
+      });
+  }, []);
 
   const TextType = (event) => {
     const value = event.target.value;
@@ -26,12 +38,19 @@ export default function PageChat({ Github }) {
 
   function handleNewMessage(newMessage) {
     const message = {
-      id: messagelist.length + 1,
+      // id: messagelist.length + 1,
       from: Github.login,
       text: newMessage,
     };
-    setMessagelist([...messagelist, message]);
-    setMessage("");
+
+    supabaseclient
+      .from("messages")
+      .insert([message])
+      .then((resposta) => {
+        console.log("Criando Mensagem:", resposta);
+        setMessagelist([...messagelist, data[0]]);
+        setMessage("");
+      });
   }
 
   const TextEnter = (event) => {
@@ -58,9 +77,7 @@ export default function PageChat({ Github }) {
                 <li key={mensagematual.id}>
                   <div className="chat-card">
                     <img src={Github.avatar_url} alt="user" />
-                    <div className="card-note">
-                      {mensagematual.text}
-                    </div>
+                    <div className="card-note">{mensagematual.text}</div>
                   </div>
                 </li>
               </>
