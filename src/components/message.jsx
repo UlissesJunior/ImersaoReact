@@ -1,6 +1,6 @@
 import React from 'react';
 
-const message = (props) => {
+const message = () => {
     return(
         <div className='container'>
             {/* {props.message.map(() =>{
