@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 // import { createClient } from "@supabase/supabase-js";
@@ -46,7 +47,7 @@ export default function PageChat({ Github }) {
          setMessage("");
     // supabaseclient
     //   .from("messages")
-    //   .insert([message])
+    //   .insert([message])em
     //   .then((resposta) => {
     //     console.log("Criando Mensagem:", resposta);
     //     setMessagelist([...messagelist, data[0]]);
