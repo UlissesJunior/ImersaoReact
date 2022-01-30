@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ImersaoReact/static/css/main.0a66f7c1.css",
-    "main.js": "/ImersaoReact/static/js/main.6bf8ae8d.js",
+    "main.css": "/ImersaoReact/static/css/main.95e6bf50.css",
+    "main.js": "/ImersaoReact/static/js/main.1faa7a85.js",
     "static/media/SFPRODISPLAYMEDIUM.OTF": "/ImersaoReact/static/media/SFPRODISPLAYMEDIUM.b85d841dacb040b84951.OTF",
     "static/media/banner.png": "/ImersaoReact/static/media/banner.6a6a2aa0bd75056aa599.png",
     "index.html": "/ImersaoReact/index.html",
-    "main.0a66f7c1.css.map": "/ImersaoReact/static/css/main.0a66f7c1.css.map",
-    "main.6bf8ae8d.js.map": "/ImersaoReact/static/js/main.6bf8ae8d.js.map"
+    "main.95e6bf50.css.map": "/ImersaoReact/static/css/main.95e6bf50.css.map",
+    "main.1faa7a85.js.map": "/ImersaoReact/static/js/main.1faa7a85.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a66f7c1.css",
-    "static/js/main.6bf8ae8d.js"
+    "static/css/main.95e6bf50.css",
+    "static/js/main.1faa7a85.js"
   ]
 }
