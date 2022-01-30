@@ -306,6 +306,17 @@ body {
       }
     }
   }
+  .container-text {
+    margin-top: 2vh;
+    .TextField {
+      width: 100%;
+      display: grid;
+      justify-content: center;
+      input {
+        width: 95vw; //1000
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {

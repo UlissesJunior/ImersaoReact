@@ -347,6 +347,20 @@ body {
     display: grid;
     width: 120px;
   }
+  .container-text {
+    margin-top: 2vh;
+  }
+  .container-text .TextField {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .container-text .TextField input {
+    width: 95vw;
+  }
 }
 
 @media (max-width: 480px) {
