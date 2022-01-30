@@ -38,7 +38,7 @@ export default function PageChat({ Github }) {
   
 
   const TextEnter = (event) => {
-    if(event.key == "Enter") {
+    if(event.key === "Enter") {
       event.preventDefault();
       handleNewMessage(message);
     }
