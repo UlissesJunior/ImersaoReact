@@ -53,7 +53,9 @@ const Homepage = () => {
             </div>
           )}
         />
-        <Route path="/chat/" exact component={Chat}/>
+        <Route path="/chat/" exact render={() => (
+          <Chat Github={Github}/>
+        )} />
       </Switch>
     </Router>
   );

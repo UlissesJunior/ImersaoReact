@@ -122,7 +122,7 @@ body {
   }
 }
 
-.container-chat {
+.container-nav {
   max-width: 1030px;
   margin: auto;
   color: $white;
@@ -144,6 +144,32 @@ body {
       text-decoration: none;
       color: #fff;
       cursor: pointer;
+    }
+}
+}
+
+.container-chat {
+  max-width: 1030px;
+  margin: auto;
+  display: grid;
+  li {
+    text-decoration: none;
+    list-style: none;
+    margin: 16px;
+  }
+  .TextField {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    input {
+      width: 1030px; //1000
+      height: 80px; 
+      backdrop-filter: blur(5px);
+      border-radius: 24px;
+      outline: none;
+      padding: 24px 50px;
+      font-size: 24px;
+      opacity: 0.3;
     }
   }
 }
