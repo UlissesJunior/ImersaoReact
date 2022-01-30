@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 // import Message from './components/message'
 
@@ -13,36 +13,33 @@ export default function PageChat({ Github }) {
 
   const handleClickBack = () => {
     history.goBack();
-  }
+  };
 
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [messagelist, setMessagelist] = useState([]);
 
   const TextType = (event) => {
     const value = event.target.value;
     setMessage(value);
-    console.log(message)
-  }
+    console.log(message);
+  };
 
-  function handleNewMessage (newMessage) {
+  function handleNewMessage(newMessage) {
     const message = {
       id: messagelist.length + 1,
       from: Github.login,
-      text: newMessage
-    }
-    setMessagelist([
-      ...messagelist, message
-    ]);
-    setMessage('');
+      text: newMessage,
+    };
+    setMessagelist([...messagelist, message]);
+    setMessage("");
   }
-  
 
   const TextEnter = (event) => {
-    if(event.key === "Enter") {
+    if (event.key === "Enter") {
       event.preventDefault();
       handleNewMessage(message);
     }
-  }
+  };
 
   return (
     <>
@@ -56,18 +53,33 @@ export default function PageChat({ Github }) {
       <div className="container-chat">
         <div>
           {messagelist.map((mensagematual) => {
-            return(
-              <li key={mensagematual.id}><h1>{mensagematual.from}: {mensagematual.text}</h1></li>
-            )
+            return (
+              <>
+                <li key={mensagematual.id}>
+                  <div className="chat-card">
+                    <img src={Github.avatar_url} alt="user" />
+                    <div className="card-note">
+                      {mensagematual.text}
+                    </div>
+                  </div>
+                </li>
+              </>
+            );
           })}
           {/* <Message messagelist={messagelist}/> */}
         </div>
-        
+      </div>
+      <div className="container-text">
         <div className="TextField">
-          <input value={message} onChange={TextType} onKeyPress={TextEnter} placeholder="Insira sua mensagem aqui... " type="text"></input>
+          <input
+            value={message}
+            onChange={TextType}
+            onKeyPress={TextEnter}
+            placeholder="Insira sua mensagem aqui... "
+            type="text"
+          ></input>
         </div>
       </div>
     </>
   );
-  
 }

@@ -3,6 +3,8 @@ $bg: linear-gradient(90deg, #3b3c41 0%, #0d0d0f 92.83%);
 $white: #fff;
 $gray: #dbcccc;
 $blue: #5d85f4;
+$blue-card: #3f5aba;
+
 $box-button: 0px 0px 36px 6px rgba(93, 133, 244, 0.4);
 $box-banner: 0px 0px 36px 12px rgba(93, 133, 244, 0.25);
 
@@ -22,6 +24,8 @@ $box-banner: 0px 0px 36px 12px rgba(93, 133, 244, 0.25);
 body {
   background: $bg;
 }
+
+// Homepage
 
 .container {
   max-width: 1030px;
@@ -122,6 +126,8 @@ body {
   }
 }
 
+//Chat Page
+
 .container-nav {
   max-width: 1030px;
   margin: auto;
@@ -135,9 +141,10 @@ body {
     margin-top: 50px;
     height: 50px;
     width: 100%;
-    h1,h2 {
-    font-size: 32px;
-    font-weight: bold;
+    h1,
+    h2 {
+      font-size: 32px;
+      font-weight: bold;
     }
     h2 {
       opacity: 0.3;
@@ -145,25 +152,80 @@ body {
       color: #fff;
       cursor: pointer;
     }
-}
+  }
 }
 
 .container-chat {
+  overflow-y: scroll;
+  height: 75vh;
   max-width: 1030px;
   margin: auto;
   display: grid;
+
   li {
     text-decoration: none;
     list-style: none;
-    margin: 16px;
+    margin-top: 16px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #363636;
+  opacity: 0.3;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+  background: $blue-card;
+  border-radius: 30px;
+}
+
+.chat-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  position: relative;
+  max-width: 50%;
+  height: 100%;
+  min-height: 80px;
+  background-color: $blue-card;
+  border-radius: 24px;
+  img {
+    align-self: flex-start;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin: 20px;
+  }
+  .card-note {
+    word-break: break-all;
+    display: flex;
+    font-size: 24px;
+    height: 100%;
+    margin: 20px 20px 20px 0;
+    color: #fff;
+  }
+}
+
+.chat-card-2 {
+  background-color: $blue-card;
+  .card-note {
+    color: $blue;
+  }
+}
+
+.container-text {
+  margin-top: 2vh;
   .TextField {
     width: 100%;
     display: grid;
     justify-content: center;
     input {
       width: 1030px; //1000
-      height: 80px; 
+      height: 80px;
       backdrop-filter: blur(5px);
       border-radius: 24px;
       outline: none;
@@ -173,6 +235,8 @@ body {
     }
   }
 }
+
+//Responsive
 
 @media (max-width: 1029px) {
   .container {
@@ -243,11 +307,12 @@ body {
 }
 
 @media (max-width: 480px) {
-    .container {
-        .profile {
-            h2, h3 {
-                margin-left: 20px;
-            }
-        }
+  .container {
+    .profile {
+      h2,
+      h3 {
+        margin-left: 20px;
+      }
     }
+  }
 }

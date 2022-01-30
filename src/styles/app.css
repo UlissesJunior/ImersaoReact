@@ -159,7 +159,8 @@ body {
   width: 100%;
 }
 
-.container-nav .nav h1, .container-nav .nav h2 {
+.container-nav .nav h1,
+.container-nav .nav h2 {
   font-size: 32px;
   font-weight: bold;
 }
@@ -172,6 +173,8 @@ body {
 }
 
 .container-chat {
+  overflow-y: scroll;
+  height: 75vh;
   max-width: 1030px;
   margin: auto;
   display: -ms-grid;
@@ -181,10 +184,78 @@ body {
 .container-chat li {
   text-decoration: none;
   list-style: none;
-  margin: 16px;
+  margin-top: 16px;
 }
 
-.container-chat .TextField {
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #363636;
+  opacity: 0.3;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f5aba;
+  border-radius: 30px;
+}
+
+.chat-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  max-width: 50%;
+  height: 100%;
+  min-height: 80px;
+  background-color: #3f5aba;
+  border-radius: 24px;
+}
+
+.chat-card img {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.chat-card .card-note {
+  word-break: break-all;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 24px;
+  height: 100%;
+  margin: 20px 20px 20px 0;
+  color: #fff;
+}
+
+.chat-card-2 {
+  background-color: #3f5aba;
+}
+
+.chat-card-2 .card-note {
+  color: #5d85f4;
+}
+
+.container-text {
+  margin-top: 2vh;
+}
+
+.container-text .TextField {
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -193,7 +264,7 @@ body {
           justify-content: center;
 }
 
-.container-chat .TextField input {
+.container-text .TextField input {
   width: 1030px;
   height: 80px;
   -webkit-backdrop-filter: blur(5px);
@@ -276,7 +347,8 @@ body {
 }
 
 @media (max-width: 480px) {
-  .container .profile h2, .container .profile h3 {
+  .container .profile h2,
+  .container .profile h3 {
     margin-left: 20px;
   }
 }
