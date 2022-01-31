@@ -27,9 +27,9 @@ export default function PageChat({ Github }) {
       .from("messages")
       .select("*")
       .then(({ data }) => {
-        // setMessagelist(data);
+        setMessagelist(data);
       });
-  }, [messagelist]);
+  }, [messagelist, supabaseclient]);
 
   const TextType = (event) => {
     const value = event.target.value;
