@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Sticker_button from "../img/sticker_button.png";
 
 const Sticker = () => {
-    const [isOpen, setOpenState] = useState();
+    // const [isOpen, setOpenState] = useState();
 
     const handleClick = () => {
         return(
