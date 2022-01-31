@@ -29,7 +29,7 @@ export default function PageChat({ Github }) {
       .then(({ data }) => {
         setMessagelist(data);
       });
-  }, []);
+  }, [messagelist]);
 
   const TextType = (event) => {
     const value = event.target.value;

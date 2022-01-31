@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Sticker_button from "../img/sticker_button.png";
 
 const Sticker = () => {
@@ -7,7 +7,7 @@ const Sticker = () => {
     const handleClick = () => {
         return(
             <div className="box-sticker">
-                <h1>oi</h1>
+                <h1>oii</h1>
             </div>
         )
     }
