@@ -1,5 +1,8 @@
 import React from "react";
+
 import Sticker from "./components/sticker";
+import Send from "./components/send";
+
 import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -43,16 +46,15 @@ export default function PageChat({ Github }) {
       from: Github.login,
       text: newMessage,
     };
-        setMessagelist([...messagelist, message]);
+        // setMessagelist([...messagelist, message]);
+        // setMessage("");
+    supabaseclient
+      .from("messages")
+      .insert([message])
+      .then((data) => {
+        setMessagelist([...messagelist, data[0]]);
          setMessage("");
-    // supabaseclient
-    //   .from("messages")
-    //   .insert([message])
-    //   .then((data) => {
-    //     console.log("Criando Mensagem:", data);
-    //     setMessagelist([...messagelist, data[0]]);
-    //      setMessage("");
-    //   });
+      });
   }
 
   const TextEnter = (event) => {
@@ -62,6 +64,18 @@ export default function PageChat({ Github }) {
     }
   };
 
+  const lixeira = () => {
+    supabaseclient
+      .from("messages")
+      .delete()
+      .match({ id: message.id })
+      .then(() => {
+        let indice = messagelist.indexOf(message);
+        messagelist.splice(indice, 1)
+        setMessagelist([...messagelist])
+      });
+      console.log("oi")
+  }
   return (
     <>
       <div className="container-nav">
@@ -78,14 +92,15 @@ export default function PageChat({ Github }) {
               <>
                 <li key={mensagematual.id}>
                   <div className="chat-card">
-                    <img src={Github.avatar_url} alt="user" />
+                    <span>
+                   <button onClick={lixeira}><img onclick={lixeira} src={Github.avatar_url} alt="user" /></button>
+                    </span>
                     <div className="card-note">{mensagematual.text}</div>
                   </div>
                 </li>
               </>
             );
           })}
-          {/* <Message messagelist={messagelist}/> */}
         </div>
       </div>
       <div className="container-text">
@@ -98,6 +113,7 @@ export default function PageChat({ Github }) {
             type="text"
           ></input>
           <Sticker/>
+          <Send handleNewMessage={handleNewMessage} message={message}/>
         </div>
       </div>
     </>

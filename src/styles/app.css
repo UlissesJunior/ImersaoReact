@@ -223,6 +223,11 @@ body {
   border-radius: 24px;
 }
 
+.chat-card button {
+  background: none;
+  cursor: pointer;
+}
+
 .chat-card img {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -282,10 +287,21 @@ body {
 
 .container-text .TextField .sticker {
   position: absolute;
-  margin: 14px 0px 14px 604px;
+  margin: 14px 0px 14px 704px;
 }
 
 .container-text .TextField .sticker button {
+  z-index: 2;
+  background: none;
+  cursor: pointer;
+}
+
+.container-text .TextField .button-send {
+  position: absolute;
+  margin: 14px 0px 14px 904px;
+}
+
+.container-text .TextField .button-send button {
   z-index: 2;
   background: none;
   cursor: pointer;

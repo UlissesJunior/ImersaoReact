@@ -193,6 +193,10 @@ body {
   min-height: 80px;
   background-color: $blue-card;
   border-radius: 24px;
+  button {
+    background: none;
+    cursor: pointer;
+  }
   img {
     align-self: flex-start;
     width: 40px;
@@ -236,14 +240,25 @@ body {
       opacity: 0.3;
     }
     .sticker {
+      position: absolute;
+     margin: 14px 0px 14px 704px;
       button {
         z-index: 2;
         background: none;
         cursor: pointer;
       }
-     position: absolute;
-     margin: 14px 0px 14px 604px;
+     
     }
+    .button-send {
+      position: absolute;
+      margin: 14px 0px 14px 904px;
+      button {
+        z-index: 2;
+        background: none;
+        cursor: pointer;
+      }
+    }
+
     .box-sticker {
       display: flex;
       width: 300px;
