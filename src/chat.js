@@ -27,7 +27,7 @@ export default function PageChat({ Github }) {
       .from("messages")
       .select("*")
       .then(({ data }) => {
-        setMessagelist(data);
+        // setMessagelist(data);
       });
   }, [messagelist]);
 
