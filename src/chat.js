@@ -1,4 +1,5 @@
 import React from "react";
+import Sticker from "./components/sticker";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -29,7 +30,7 @@ export default function PageChat({ Github }) {
         console.log("Dados da consulta:", data);
         setMessagelist(data);
       });
-  }, [messagelist]);
+  }, []);
 
   const TextType = (event) => {
     const value = event.target.value;
@@ -43,16 +44,16 @@ export default function PageChat({ Github }) {
       from: Github.login,
       text: newMessage,
     };
-        // setMessagelist([...messagelist, message]);
-        //  setMessage("");
-    supabaseclient
-      .from("messages")
-      .insert([message])
-      .then((data) => {
-        console.log("Criando Mensagem:", data);
-        setMessagelist([...messagelist, data[0]]);
+        setMessagelist([...messagelist, message]);
          setMessage("");
-      });
+    // supabaseclient
+    //   .from("messages")
+    //   .insert([message])
+    //   .then((data) => {
+    //     console.log("Criando Mensagem:", data);
+    //     setMessagelist([...messagelist, data[0]]);
+    //      setMessage("");
+    //   });
   }
 
   const TextEnter = (event) => {
@@ -97,6 +98,7 @@ export default function PageChat({ Github }) {
             placeholder="Insira sua mensagem aqui... "
             type="text"
           ></input>
+          <Sticker/>
         </div>
       </div>
     </>

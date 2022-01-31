@@ -260,11 +260,12 @@ body {
 
 .container-text .TextField {
   width: 100%;
-  display: -ms-grid;
-  display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .container-text .TextField input {
@@ -277,6 +278,27 @@ body {
   padding: 24px 50px;
   font-size: 24px;
   opacity: 0.3;
+}
+
+.container-text .TextField .sticker {
+  position: absolute;
+  margin: 14px 0px 14px 604px;
+}
+
+.container-text .TextField .sticker button {
+  z-index: 2;
+  background: none;
+  cursor: pointer;
+}
+
+.container-text .TextField .box-sticker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background-color: #3f5aba;
 }
 
 @media (max-width: 1029px) {
