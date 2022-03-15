@@ -1,10 +1,12 @@
 import React from "react";
 import SendImg from "../img/send_button.png";
+import { useHistory } from "react-router-dom";
 
 const Send = ({ handleNewMessage, message }) => {
+  const history = useHistory();
   const ClickSend = (event) => {
-    event.preventDefault();
     handleNewMessage(message);
+    event.preventDefault();
   };
   return (
     <div className="button-send">

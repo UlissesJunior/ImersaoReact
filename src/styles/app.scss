@@ -350,6 +350,15 @@ body {
   }
 }
 
+@media (max-width: 1029px) {
+  .sticker, .button-send{
+    display: none;
+  }
+  .nav, .container-chat {
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+  }
+}
 @media (max-width: 480px) {
   .container {
     .profile {

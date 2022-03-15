@@ -65,17 +65,13 @@ export default function PageChat({ Github }) {
   };
 
   const lixeira = () => {
-    supabaseclient
+    //https://supabase.com/docs/reference/javascript/delete
+      supabaseclient
       .from("messages")
       .delete()
       .match({ id: message.id })
-      .then(() => {
-        let indice = messagelist.indexOf(message);
-        messagelist.splice(indice, 1)
-        setMessagelist([...messagelist])
-      });
-      console.log("oi")
   }
+
   return (
     <>
       <div className="container-nav">
