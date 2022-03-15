@@ -4,9 +4,11 @@ import { useHistory } from "react-router-dom";
 
 const Send = ({ handleNewMessage, message }) => {
   const history = useHistory();
-  const ClickSend = (event) => {
-    handleNewMessage(message);
+  const ClickSend = (event) => { 
     event.preventDefault();
+    handleNewMessage(message);
+    history.push("/chat/");
+    history.goBack();
   };
   return (
     <div className="button-send">
