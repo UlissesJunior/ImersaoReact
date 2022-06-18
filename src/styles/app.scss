@@ -359,6 +359,19 @@ body {
     margin-right: 2.5vw;
   }
 }
+
+@media (max-width: 550px) {
+  .chat-card {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  .chat-card {
+    max-width: 95%;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     .profile {

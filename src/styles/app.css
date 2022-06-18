@@ -411,6 +411,18 @@ body {
   }
 }
 
+@media (max-width: 550px) {
+  .chat-card {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  .chat-card {
+    max-width: 95%;
+  }
+}
+
 @media (max-width: 480px) {
   .container .profile h2,
   .container .profile h3 {
