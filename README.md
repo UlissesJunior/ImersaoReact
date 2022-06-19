@@ -52,4 +52,4 @@ A <a href="https://api.github.com" target="_blank">API do Github</a> é uma ferr
 ## Demo
 
 Para testar acesse o link: 
-<a href="https://ulissesjunior.github.io/ImersaoReact/" target="_blank">Login UI</a>
+<a href="https://ulissesjunior.github.io/ImersaoReact/" target="_blank">Imersão React</a>
