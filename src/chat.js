@@ -25,7 +25,6 @@ export default function PageChat({ Github }) {
 
   const [message, setMessage] = useState("");
   const [messagelist, setMessagelist] = useState([]);
-  // const [user, setUser] = useState([]);
 
   useEffect(() => {
     supabaseclient
@@ -35,15 +34,6 @@ export default function PageChat({ Github }) {
         setMessagelist(data);
       });
   }, [messagelist, supabaseclient]);
-
-  // useEffect(() => {
-  //   supabaseclient
-  //     .from("messages")
-  //     .select("*")
-  //     .then(({ data }) => {
-  //       setUser(data);
-  //     });
-  // }, [user, supabaseclient]);
 
   const TextType = (event) => {
     const value = event.target.value;
