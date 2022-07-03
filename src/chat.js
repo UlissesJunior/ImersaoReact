@@ -2,6 +2,7 @@ import React from "react";
 
 import Sticker from "./components/sticker";
 import Send from "./components/send";
+import ImgError from './img/imgerror.png';
 
 import { useEffect } from "react";
 import { useState } from "react";
@@ -24,6 +25,7 @@ export default function PageChat({ Github }) {
 
   const [message, setMessage] = useState("");
   const [messagelist, setMessagelist] = useState([]);
+  // const [user, setUser] = useState([]);
 
   useEffect(() => {
     supabaseclient
@@ -33,6 +35,15 @@ export default function PageChat({ Github }) {
         setMessagelist(data);
       });
   }, [messagelist, supabaseclient]);
+
+  // useEffect(() => {
+  //   supabaseclient
+  //     .from("messages")
+  //     .select("*")
+  //     .then(({ data }) => {
+  //       setUser(data);
+  //     });
+  // }, [user, supabaseclient]);
 
   const TextType = (event) => {
     const value = event.target.value;
@@ -90,7 +101,7 @@ export default function PageChat({ Github }) {
                 <li key={mensagematual.id}>
                   <div className="chat-card">
                     <span>
-                   <button onClick={lixeira}><img onclick={lixeira} src={Github.avatar_url} alt="user" /></button>
+                   <button onClick={lixeira}><img onclick={lixeira} src={Github.avatar_url || ImgError} alt="user" /></button>
                     </span>
                     <div className="card-note">{mensagematual.text}</div>
                   </div>
