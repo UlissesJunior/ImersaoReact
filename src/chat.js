@@ -65,6 +65,7 @@ export default function PageChat({ Github }) {
   };
 
   const lixeira = () => {
+    console.log("meh")
     //https://supabase.com/docs/reference/javascript/delete
       supabaseclient
       .from("messages")
