@@ -10,7 +10,7 @@ const Profile = ({ Github }) => {
           </div>
           <div className='img-content'>
               <h3>{Github.login || 'User Not Found'}</h3>
-              <h2>{Github.followers || ''} Followers</h2>
+              <h2>{Github.followers} Followers</h2>
               <h2>{Github.following} Following</h2>
               <h2>{Github.public_repos} Repositories</h2>
               {console.log(Github)}
