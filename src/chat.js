@@ -2,12 +2,13 @@ import React from "react";
 
 import Sticker from "./components/sticker";
 import Send from "./components/send";
-import ImgError from './img/imgerror.png';
+import ImgError from "./img/imgerror.png";
 
 import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { createClient } from "@supabase/supabase-js";
+
+import { supabase } from "../src/client/supabaseClient";
 
 import ReactLogo from "./img/react_logo.png";
 
@@ -18,43 +19,35 @@ export default function PageChat({ Github }) {
     history.goBack();
   };
 
-  const SUPABASE_KEY =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzU3NTU0NywiZXhwIjoxOTU5MTUxNTQ3fQ.jawAD_4vKGPTeHjokNMLgo6QfZuB20NXJyq4bgubZTc";
-  const SUPABASE_URL = "https://lkayymgxskqfhgadypqm.supabase.co";
-  const supabaseclient = createClient(SUPABASE_URL, SUPABASE_KEY);
-
   const [message, setMessage] = useState("");
   const [messagelist, setMessagelist] = useState([]);
 
   useEffect(() => {
-    supabaseclient
+    supabase
       .from("messages")
       .select("*")
       .then(({ data }) => {
         setMessagelist(data);
       });
-  }, [messagelist, supabaseclient]);
+  }, [supabase]);
 
   const TextType = (event) => {
     const value = event.target.value;
     setMessage(value);
-    console.log(message);
+    // console.log(message);
   };
 
-  function handleNewMessage(newMessage) {
+  async function handleNewMessage(newMessage) {
     const message = {
-      // id: messagelist.length + 1,
       from: Github.login,
       text: newMessage,
     };
-        // setMessagelist([...messagelist, message]);
-        // setMessage("");
-    supabaseclient
+    supabase
       .from("messages")
       .insert([message])
       .then((data) => {
         setMessagelist([...messagelist, data[0]]);
-         setMessage("");
+        setMessage("");
       });
   }
 
@@ -64,15 +57,6 @@ export default function PageChat({ Github }) {
       handleNewMessage(message);
     }
   };
-
-  const lixeira = () => {
-    console.log("meh")
-    //https://supabase.com/docs/reference/javascript/delete
-      supabaseclient
-      .from("messages")
-      .delete()
-      .match({ id: message.id })
-  }
 
   return (
     <>
@@ -91,7 +75,7 @@ export default function PageChat({ Github }) {
                 <li key={mensagematual.id}>
                   <div className="chat-card">
                     <span>
-                   <button onClick={lixeira}><img onclick={lixeira} src={Github.avatar_url || ImgError} alt="user" /></button>
+                      <img src={Github.avatar_url || ImgError} alt="user" />
                     </span>
                     <div className="card-note">{mensagematual.text}</div>
                   </div>
@@ -110,8 +94,8 @@ export default function PageChat({ Github }) {
             placeholder="Insira sua mensagem aqui... "
             type="text"
           ></input>
-          <Sticker/>
-          <Send handleNewMessage={handleNewMessage} message={message}/>
+          <Sticker />
+          <Send handleNewMessage={handleNewMessage} message={message} />
         </div>
       </div>
     </>

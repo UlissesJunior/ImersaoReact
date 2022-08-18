@@ -13,7 +13,7 @@ const Profile = ({ Github }) => {
               <h2>{Github.followers} Followers</h2>
               <h2>{Github.following} Following</h2>
               <h2>{Github.public_repos} Repositories</h2>
-              {console.log(Github)}
+              {/* {console.log(Github)} */}
           </div>
         </div>
     )
