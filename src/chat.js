@@ -67,13 +67,13 @@ export default function PageChat({ Github }) {
     }
   };
 
-  const lixeira = () => {
-    console.log("meh");
-    // supabaseclient
-    // .from("messages")
-    // .delete()
-    // .match({ id: message.id })
-  };
+  // const lixeira = () => {
+  //   console.log("meh");
+  //   // supabaseclient
+  //   // .from("messages")
+  //   // .delete()
+  //   // .match({ id: message.id })
+  // };
 
   return (
     <>
