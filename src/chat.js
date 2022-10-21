@@ -4,7 +4,7 @@ import Sticker from "./components/sticker";
 import Send from "./components/send";
 import ImgError from "./img/imgerror.png";
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 // import { createClient } from "@supabase/supabase-js";
@@ -24,7 +24,7 @@ export default function PageChat({ Github }) {
   // const supabaseclient = createClient(SUPABASE_URL, SUPABASE_KEY);
 
   const [message, setMessage] = useState("");
-  const [messagelist, setMessagelist] = useState([]);
+  // const [messagelist, setMessagelist] = useState([]);
 
   // useEffect(() => {
   //   supabaseclient
@@ -41,23 +41,23 @@ export default function PageChat({ Github }) {
     console.log(message);
   };
 
-  function handleNewMessage(newMessage) {
-    const message = {
-      // id: messagelist.length + 1,
-      from: Github.login,
-      text: newMessage,
-    };
-    // setMessagelist([...messagelist, message]);
-    // setMessage("");
+  // function handleNewMessage(newMessage) {
+  //   const message = {
+  //     // id: messagelist.length + 1,
+  //     from: Github.login,
+  //     text: newMessage,
+  //   };
+  //   // setMessagelist([...messagelist, message]);
+  //   // setMessage("");
 
-    // supabaseclient
-    //   .from("messages")
-    //   .insert([message])
-    //   .then((data) => {
-    //     setMessagelist([...messagelist, data[0]]);
-    //      setMessage("");
-    //   });
-  }
+  //   // supabaseclient
+  //   //   .from("messages")
+  //   //   .insert([message])
+  //   //   .then((data) => {
+  //   //     setMessagelist([...messagelist, data[0]]);
+  //   //      setMessage("");
+  //   //   });
+  // }
 
   const TextEnter = (event) => {
     if (event.key === "Enter") {
