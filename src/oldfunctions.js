@@ -4,10 +4,10 @@ import Sticker from "./components/sticker";
 import Send from "./components/send";
 import ImgError from "./img/imgerror.png";
 
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-// import { createClient } from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 
 import ReactLogo from "./img/react_logo.png";
 
@@ -24,16 +24,16 @@ export default function PageChat({ Github }) {
   // const supabaseclient = createClient(SUPABASE_URL, SUPABASE_KEY);
 
   const [message, setMessage] = useState("");
-  // const [messagelist, setMessagelist] = useState([]);
+  const [messagelist, setMessagelist] = useState([]);
 
-  // useEffect(() => {
-  //   supabaseclient
-  //     .from("messages")
-  //     .select("*")
-  //     .then(({ data }) => {
-  //       setMessagelist(data);
-  //     });
-  // }, [messagelist, supabaseclient]);
+  useEffect(() => {
+    supabaseclient
+      .from("messages")
+      .select("*")
+      .then(({ data }) => {
+        setMessagelist(data);
+      });
+  }, [messagelist, supabaseclient]);
 
   const TextType = (event) => {
     const value = event.target.value;
@@ -43,21 +43,21 @@ export default function PageChat({ Github }) {
 
   function handleNewMessage(newMessage) {
     console.log("Nova mensagem")
-  //   const message = {
-  //     // id: messagelist.length + 1,
-  //     from: Github.login,
-  //     text: newMessage,
-  //   };
-  //   // setMessagelist([...messagelist, message]);
-  //   // setMessage("");
+    const message = {
+      id: messagelist.length + 1,
+      from: Github.login,
+      text: newMessage,
+    };
+    // setMessagelist([...messagelist, message]);
+    // setMessage("");
 
-  //   // supabaseclient
-  //   //   .from("messages")
-  //   //   .insert([message])
-  //   //   .then((data) => {
-  //   //     setMessagelist([...messagelist, data[0]]);
-  //   //      setMessage("");
-  //   //   });
+    supabaseclient
+      .from("messages")
+      .insert([message])
+      .then((data) => {
+        setMessagelist([...messagelist, data[0]]);
+         setMessage("");
+      });
   }
 
   const TextEnter = (event) => {
@@ -67,13 +67,13 @@ export default function PageChat({ Github }) {
     }
   };
 
-  const lixeira = () => {
-    console.log("meh");
-    // supabaseclient
-    // .from("messages")
-    // .delete()
-    // .match({ id: message.id })
-  };
+//   const lixeira = () => {
+//     console.log("meh");
+//     // supabaseclient
+//     // .from("messages")
+//     // .delete()
+//     // .match({ id: message.id })
+//   };
 
   return (
     <>
@@ -86,19 +86,8 @@ export default function PageChat({ Github }) {
       </div>
       <div className="container-chat">
         <div>
-          <li>
-            <div className="chat-card">
-              <span>
-                <button>
-                  <img src={Github.avatar_url || ImgError} alt="user" />
-                </button>
-              </span>
-              <div className="card-note">
-                O banco de dados do projeto foi apagado!
-              </div>
-            </div>
-          </li>
-          {/* {messagelist.map((mensagematual) => {
+        
+          {messagelist.map((mensagematual) => {
             return (
               <>
                 <li key={mensagematual.id}>
@@ -117,7 +106,7 @@ export default function PageChat({ Github }) {
                 </li>
               </>
             );
-          })} */}
+          })}
         </div>
       </div>
       <div className="container-text">
