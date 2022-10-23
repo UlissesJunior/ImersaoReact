@@ -18,46 +18,22 @@ export default function PageChat({ Github }) {
     history.goBack();
   };
 
-  // const SUPABASE_KEY =
-  //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzU3NTU0NywiZXhwIjoxOTU5MTUxNTQ3fQ.jawAD_4vKGPTeHjokNMLgo6QfZuB20NXJyq4bgubZTc";
-  // const SUPABASE_URL = "https://lkayymgxskqfhgadypqm.supabase.co";
-  // const supabaseclient = createClient(SUPABASE_URL, SUPABASE_KEY);
-
   const [message, setMessage] = useState("");
-  // const [messagelist, setMessagelist] = useState([]);
-
-  // useEffect(() => {
-  //   supabaseclient
-  //     .from("messages")
-  //     .select("*")
-  //     .then(({ data }) => {
-  //       setMessagelist(data);
-  //     });
-  // }, [messagelist, supabaseclient]);
+  const [messagelist, setMessagelist] = useState([]);
 
   const TextType = (event) => {
     const value = event.target.value;
     setMessage(value);
-    console.log(message);
   };
 
   function handleNewMessage(newMessage) {
-    console.log("Nova mensagem")
-  //   const message = {
-  //     // id: messagelist.length + 1,
-  //     from: Github.login,
-  //     text: newMessage,
-  //   };
-  //   // setMessagelist([...messagelist, message]);
-  //   // setMessage("");
-
-  //   // supabaseclient
-  //   //   .from("messages")
-  //   //   .insert([message])
-  //   //   .then((data) => {
-  //   //     setMessagelist([...messagelist, data[0]]);
-  //   //      setMessage("");
-  //   //   });
+    const message = {
+      id: messagelist.length + 1,
+      from: Github.login,
+      text: newMessage,
+    };
+    setMessagelist([...messagelist, message]);
+    setMessage("");
   }
 
   const TextEnter = (event) => {
@@ -66,14 +42,6 @@ export default function PageChat({ Github }) {
       handleNewMessage(message);
     }
   };
-
-  // const lixeira = () => {
-  //   console.log("meh");
-  //   // supabaseclient
-  //   // .from("messages")
-  //   // .delete()
-  //   // .match({ id: message.id })
-  // };
 
   return (
     <>
@@ -98,18 +66,14 @@ export default function PageChat({ Github }) {
               </div>
             </div>
           </li>
-          {/* {messagelist.map((mensagematual) => {
+          {messagelist.map((mensagematual) => {
             return (
               <>
                 <li key={mensagematual.id}>
                   <div className="chat-card">
                     <span>
-                      <button onClick={lixeira}>
-                        <img
-                          onclick={lixeira}
-                          src={Github.avatar_url || ImgError}
-                          alt="user"
-                        />
+                      <button>
+                        <img src={Github.avatar_url || ImgError} alt="user" />
                       </button>
                     </span>
                     <div className="card-note">{mensagematual.text}</div>
@@ -117,7 +81,7 @@ export default function PageChat({ Github }) {
                 </li>
               </>
             );
-          })} */}
+          })}
         </div>
       </div>
       <div className="container-text">
